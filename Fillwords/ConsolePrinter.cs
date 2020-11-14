@@ -33,7 +33,7 @@ namespace Fillwords
         }
 
 
-        public int ChoiseButton(int buttonNumber)
+        public int SelectButton(int buttonNumber)
         {
             while (true)
             {
@@ -61,6 +61,19 @@ namespace Fillwords
             Console.SetCursorPosition(((120 - button.inputname.Length - 20) / 2), 11);
             Console.WriteLine("Нажмите любую кнопку, чтобы выйти.");
             Console.ReadKey();
+        }
+
+        public string ConsolePrintNameParsonInNewGame()
+        {
+
+            Console.Clear();
+            Console.SetCursorPosition((120 - 16)/2, 10);
+            Console.WriteLine("Введите ваше имя");
+            Console.CursorVisible = true;
+            Console.SetCursorPosition((120 - 16) / 2, 11);
+            string namePerson = Console.ReadLine();
+            Console.CursorVisible = false;
+            return namePerson;
         }
     }
 }

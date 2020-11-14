@@ -20,36 +20,41 @@ namespace Fillwords
                 Console.Clear();
                 consolePrinter.ConsolePrintNameGame(35, 2); //Название игры
                 PrintButtons(buttons, buttonNumber); // отрисовка кнопок
-                int buttonNumberTemp = consolePrinter.ChoiseButton(buttonNumber); //выбор кнопки
+                int buttonNumberTemp = consolePrinter.SelectButton(buttonNumber); //выбор кнопки
                 if (buttonNumber != buttonNumberTemp) buttonNumber = buttonNumberTemp;
                 else
                 {
-                    switch (buttonNumber)
-                    {
-                        case 0:
-                            NewGame(buttons[0], consolePrinter);
-                            break;
-                        case 1:
-                            Resume(buttons[1], consolePrinter);
-                            break;
-                        case 2:
-                            Stats(buttons[2], consolePrinter);
-                            break;
-                        case 3:
-                            Console.BackgroundColor = ConsoleColor.White;
-                            Console.Clear();
-                            Environment.Exit(0);
-                            break;
-                        default:
-                            break;
-                    }
+                    ChoiseButton(buttonNumber, buttons, consolePrinter);
                 }
+            }
+        }
+
+        private void ChoiseButton(int buttonNumber, Button[] buttons, ConsolePrinter consolePrinter)
+        {
+            switch (buttonNumber)
+            {
+                case 0:
+                    NewGame(buttons[0], consolePrinter);
+                    break;
+                case 1:
+                    Resume(buttons[1], consolePrinter);
+                    break;
+                case 2:
+                    Stats(buttons[2], consolePrinter);
+                    break;
+                case 3:
+                    Console.BackgroundColor = ConsoleColor.White;
+                    Console.Clear();
+                    Environment.Exit(0);
+                    break;
+                default:
+                    break;
             }
         }
 
         private void NewGame(Button button, ConsolePrinter consolePrinter)
         {
-            consolePrinter.ConsolePrintDummy(button);
+            string NamePerson = consolePrinter.ConsolePrintNameParsonInNewGame();
         }
 
         private void Resume(Button button, ConsolePrinter consolePrinter)
