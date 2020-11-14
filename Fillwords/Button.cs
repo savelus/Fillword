@@ -16,10 +16,10 @@ namespace Fillwords
             inputname = name;
         }
 
-        public void PrintButton(int cursorLeft, int cursorTop)
+        public void PrintButton(int cursorLeft, int cursorTop, bool changeColor)
         {
             ConsolePrinter printButton = new ConsolePrinter();
-            printButton.ConsolePrintButton(cursorLeft, cursorTop, width, inputname);
+            printButton.ConsolePrintButton(cursorLeft, cursorTop, width, inputname, changeColor);
         }
     }
 }

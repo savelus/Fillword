@@ -19,9 +19,11 @@ namespace Fillwords
             Console.SetCursorPosition(cursorLeft, cursorTop++);
             Console.WriteLine("    |_||_||_||_|   \\_/\\_/    \\___/    |_||_.__/ \\___|");
         }
-        public void ConsolePrintButton(int cursorLeft, int cursorTop, int width, string inputname)
+        public void ConsolePrintButton(int cursorLeft, int cursorTop, int width, string inputname, bool changeColor)
         {
             Console.SetCursorPosition(cursorLeft, cursorTop++);
+            if (changeColor) Console.BackgroundColor = ConsoleColor.Cyan;
+            else Console.BackgroundColor = ConsoleColor.White;
             Console.WriteLine($"┌{new string('─', width - 2)}┐");
             Console.SetCursorPosition(cursorLeft, cursorTop++);
             Console.WriteLine($"│{new string(' ', (18 - inputname.Length) / 2)}" +
@@ -30,5 +32,23 @@ namespace Fillwords
             Console.WriteLine($"└{new string('─', width - 2)}┘");
         }
 
+        public int ChangeButtons(int buttonNumber)
+        {
+            while (true)
+            {
+                var key = Console.ReadKey(true);
+                if (key.KeyChar == 'w' || key.Key == ConsoleKey.UpArrow)
+                {
+                    if (buttonNumber == 0) return 3;
+                    else return buttonNumber-=1;
+                }
+                else if (key.KeyChar == 's' || key.Key == ConsoleKey.DownArrow)
+                {
+                    if (buttonNumber == 3) return 0;
+                    else return buttonNumber+=1;
+                }
+                else continue;
+            }
+        }
     }
 }
