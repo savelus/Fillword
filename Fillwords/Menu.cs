@@ -20,8 +20,46 @@ namespace Fillwords
                 Console.Clear();
                 consolePrinter.ConsolePrintNameGame(35, 2); //Название игры
                 PrintButtons(buttons, buttonNumber); // отрисовка кнопок
-                buttonNumber = consolePrinter.ChangeButtons(buttonNumber);
+                int buttonNumberTemp = consolePrinter.ChoiseButton(buttonNumber); //выбор кнопки
+                if (buttonNumber != buttonNumberTemp) buttonNumber = buttonNumberTemp;
+                else
+                {
+                    switch (buttonNumber)
+                    {
+                        case 0:
+                            NewGame(buttons[0], consolePrinter);
+                            break;
+                        case 1:
+                            Resume(buttons[1], consolePrinter);
+                            break;
+                        case 2:
+                            Stats(buttons[2], consolePrinter);
+                            break;
+                        case 3:
+                            Console.BackgroundColor = ConsoleColor.White;
+                            Console.Clear();
+                            Environment.Exit(0);
+                            break;
+                        default:
+                            break;
+                    }
+                }
             }
+        }
+
+        private void NewGame(Button button, ConsolePrinter consolePrinter)
+        {
+            consolePrinter.ConsolePrintDummy(button);
+        }
+
+        private void Resume(Button button, ConsolePrinter consolePrinter)
+        {
+            consolePrinter.ConsolePrintDummy(button);
+        }
+
+        private void Stats(Button button, ConsolePrinter consolePrinter)
+        {
+            consolePrinter.ConsolePrintDummy(button);
         }
 
         private void PrintButtons(Button[] buttons, int buttonNumber)
