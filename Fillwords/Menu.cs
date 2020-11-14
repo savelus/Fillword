@@ -15,8 +15,8 @@ namespace Fillwords
             Button[] buttons = new Button[] {new Button("New game"), new Button("Resume"), 
                                              new Button("Stats"), new Button("Quit the Game") };
             Console.SetWindowSize(120, 30);
-            Console.SetCursorPosition(55, 2);
-            Console.WriteLine("Fillwords"); // название игры
+            ConsolePrinter nameGame = new ConsolePrinter();
+            nameGame.ConsolePrintNameGame(35, 2);
             PrintButtons(buttons); // отрисовка кнопок
             Console.ReadKey();
         }
@@ -24,7 +24,7 @@ namespace Fillwords
         private void PrintButtons(Button[] buttons)
         {
             int cursorLeft = 50;
-            int cursorTop = 5;
+            int cursorTop = 10;
             foreach(Button button in buttons)
             {
                 button.PrintButton(cursorLeft, cursorTop);
