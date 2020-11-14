@@ -32,12 +32,14 @@ namespace Fillwords
             Console.WriteLine($"└{new string('─', width - 2)}┘");
         }
 
-        public int ChangeButtons(int buttonNumber)
+
+        public int ChoiseButton(int buttonNumber)
         {
             while (true)
             {
                 var key = Console.ReadKey(true);
-                if (key.KeyChar == 'w' || key.Key == ConsoleKey.UpArrow)
+                if (key.Key == ConsoleKey.Enter) return buttonNumber;
+                else if (key.KeyChar == 'w' || key.Key == ConsoleKey.UpArrow)
                 {
                     if (buttonNumber == 0) return 3;
                     else return buttonNumber-=1;
@@ -49,6 +51,16 @@ namespace Fillwords
                 }
                 else continue;
             }
+        }
+
+        public void ConsolePrintDummy (Button button)
+        {
+            Console.Clear();
+            Console.SetCursorPosition(((120 - button.inputname.Length - 20) / 2), 10);
+            Console.WriteLine($"Здесь однажды будет \"{button.inputname}\"");
+            Console.SetCursorPosition(((120 - button.inputname.Length - 20) / 2), 11);
+            Console.WriteLine("Нажмите любую кнопку, чтобы выйти.");
+            Console.ReadKey();
         }
     }
 }
