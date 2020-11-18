@@ -10,7 +10,8 @@ namespace Fillwords
         public void CreateWindow()
         {
             Button[] buttons = new Button[] {new Button("New game"), new Button("Resume"),
-                                             new Button("Stats"), new Button("Quit the Game")};
+                                             new Button("Stats"), new Button ("Add words"),
+                                             new Button("Quit the Game") };
             Console.SetWindowSize(120, 30);
             ConsolePrinter consolePrinter = new ConsolePrinter();
             int buttonNumber = 0;
@@ -45,6 +46,9 @@ namespace Fillwords
                     Stats(buttons[2], consolePrinter);
                     break;
                 case 3:
+                    AddWords(buttons[3], consolePrinter);
+                    break;
+                case 4:
                     Console.BackgroundColor = ConsoleColor.White;
                     Console.Clear();
                     Environment.Exit(0);
@@ -69,12 +73,17 @@ namespace Fillwords
             consolePrinter.ConsolePrintDummy(button);
         }
 
+        private void AddWords(Button button, ConsolePrinter consolePrinter)
+        {
+            consolePrinter.ConsolePrintDummy(button);
+        }
+
         private void PrintButtons(Button[] buttons, int buttonNumber)
         {
             int cursorLeft = 50;
             int cursorTop = 10;
             
-            for(int i = 0; i < 4; i++)
+            for(int i = 0; i < buttons.Length; i++)
             {
                 bool changeColor = false;
                 if (i == buttonNumber) changeColor = true;
