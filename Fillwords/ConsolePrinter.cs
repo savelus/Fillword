@@ -42,12 +42,12 @@ namespace Fillwords
                 if (key.Key == ConsoleKey.Enter) return buttonNumber;
                 else if (key.KeyChar == 'w' || key.Key == ConsoleKey.UpArrow)
                 {
-                    if (buttonNumber == 0) return 3;
+                    if (buttonNumber == 0) return 4;
                     else return buttonNumber-=1;
                 }
                 else if (key.KeyChar == 's' || key.Key == ConsoleKey.DownArrow)
                 {
-                    if (buttonNumber == 3) return 0;
+                    if (buttonNumber == 4) return 0;
                     else return buttonNumber+=1;
                 }
                 else continue;
