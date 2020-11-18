@@ -32,21 +32,25 @@ namespace Fillwords
             }
         }
 
-        private void ChoiseButton(int buttonNumber, Button[] buttons, ConsolePrinter consolePrinter)
+        public void ChoiseButton(int buttonNumber, Button[] buttons, ConsolePrinter consolePrinter)
         {
             switch (buttonNumber)
             {
                 case 0:
-                    NewGame(buttons[0], consolePrinter);
+                    var newGame = new NewGame();
+                    newGame.StartNewGame(buttons[0]);
                     break;
                 case 1:
-                    Resume(buttons[1], consolePrinter);
+                    var resume = new Resume();
+                    resume.StartResume(buttons[1]);
                     break;
                 case 2:
-                    Stats(buttons[2], consolePrinter);
+                    var stats = new Stats();
+                    stats.StartStats(buttons[2]);
                     break;
                 case 3:
-                    AddWords(buttons[3], consolePrinter);
+                    var addWords = new AddWords();
+                    addWords.StartAddWords(buttons[3]);
                     break;
                 case 4:
                     Console.BackgroundColor = ConsoleColor.White;
@@ -58,15 +62,9 @@ namespace Fillwords
             }
         }
 
-        private void NewGame(Button button, ConsolePrinter consolePrinter)
-        {
-            string NamePerson = consolePrinter.ConsolePrintNamePersonInNewGame();
-        }
 
-        private void Resume(Button button, ConsolePrinter consolePrinter)
-        {
-            consolePrinter.ConsolePrintDummy(button);
-        }
+
+
 
         private void Stats(Button button, ConsolePrinter consolePrinter)
         {
