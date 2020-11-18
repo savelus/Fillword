@@ -8,6 +8,7 @@ namespace Fillwords
     {
         public void ConsolePrintNameGame (int cursorLeft, int cursorTop)
         {
+            Console.BackgroundColor = ConsoleColor.White;
             Console.SetCursorPosition(cursorLeft, cursorTop++);
             Console.WriteLine(" _____  _  _  _ __        __              _          ");
             Console.SetCursorPosition(cursorLeft, cursorTop++);
@@ -61,9 +62,10 @@ namespace Fillwords
             Console.SetCursorPosition(((120 - button.inputname.Length - 20) / 2), 11);
             Console.WriteLine("Нажмите любую кнопку, чтобы выйти.");
             Console.ReadKey();
+            Console.Clear();
         }
 
-        public string ConsolePrintNameParsonInNewGame()
+        public string ConsolePrintNamePersonInNewGame()
         {
 
             Console.Clear();
