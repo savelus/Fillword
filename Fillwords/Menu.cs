@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 namespace Fillwords
 {
@@ -9,15 +10,16 @@ namespace Fillwords
         public void CreateWindow()
         {
             Button[] buttons = new Button[] {new Button("New game"), new Button("Resume"),
-                                             new Button("Stats"), new Button("Quit the Game") };
+                                             new Button("Stats"), new Button("Quit the Game")};
             Console.SetWindowSize(120, 30);
             ConsolePrinter consolePrinter = new ConsolePrinter();
             int buttonNumber = 0;
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Clear();
+            consolePrinter.ConsolePrintNameGame(35, 2); //Название игры
             while (true)
             {
-                Console.BackgroundColor = ConsoleColor.White;
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.Clear();
                 consolePrinter.ConsolePrintNameGame(35, 2); //Название игры
                 PrintButtons(buttons, buttonNumber); // отрисовка кнопок
                 int buttonNumberTemp = consolePrinter.SelectButton(buttonNumber); //выбор кнопки
@@ -54,7 +56,7 @@ namespace Fillwords
 
         private void NewGame(Button button, ConsolePrinter consolePrinter)
         {
-            string NamePerson = consolePrinter.ConsolePrintNameParsonInNewGame();
+            string NamePerson = consolePrinter.ConsolePrintNamePersonInNewGame();
         }
 
         private void Resume(Button button, ConsolePrinter consolePrinter)
