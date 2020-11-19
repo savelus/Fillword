@@ -34,20 +34,20 @@ namespace Fillwords
         }
 
 
-        public int SelectButton(int buttonNumber)
+        public int SwitchingButton(int buttonNumber, int quantityNumber)
         {
             while (true)
             {
-                var key = Console.ReadKey(true);
+                var key = Console.ReadKey();
                 if (key.Key == ConsoleKey.Enter) return buttonNumber;
                 else if (key.KeyChar == 'w' || key.Key == ConsoleKey.UpArrow)
                 {
-                    if (buttonNumber == 0) return 4;
+                    if (buttonNumber == 0) return quantityNumber - 1;
                     else return buttonNumber-=1;
                 }
                 else if (key.KeyChar == 's' || key.Key == ConsoleKey.DownArrow)
                 {
-                    if (buttonNumber == 4) return 0;
+                    if (buttonNumber == quantityNumber - 1) return 0;
                     else return buttonNumber+=1;
                 }
                 else continue;
