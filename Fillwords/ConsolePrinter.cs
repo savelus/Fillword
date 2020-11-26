@@ -69,13 +69,38 @@ namespace Fillwords
         {
 
             Console.Clear();
-            Console.SetCursorPosition((120 - 16)/2, 10);
+            Console.SetCursorPosition((120 - 16) / 2, 10);
             Console.WriteLine("Введите ваше имя");
             Console.CursorVisible = true;
             Console.SetCursorPosition((120 - 16) / 2, 11);
             string namePerson = Console.ReadLine();
             Console.CursorVisible = false;
             return namePerson;
+        }
+
+        public int[] InputSize()
+        {
+            int[] size = new int[2];
+            Console.CursorVisible = true;
+            Console.SetCursorPosition((120 - 16) / 2, 12);
+            Console.WriteLine("Введите высоту поля");
+            Console.SetCursorPosition((120 - 16) / 2, 13);
+            size[0] = GetSize();
+            Console.SetCursorPosition((120 - 16) / 2, 14);
+            Console.WriteLine("Введите ширину поля");
+            Console.SetCursorPosition((120 - 16) / 2, 15);
+            size[1] = GetSize();
+            Console.CursorVisible = false;
+            return size;
+        }
+
+        public int GetSize()
+        {
+            bool checkSize = false;
+            int size;
+            do { checkSize = int.TryParse(Console.ReadLine(), out size); }
+            while (checkSize == false);
+            return size;
         }
     }
 }

@@ -37,7 +37,7 @@ namespace Fillwords
             {
                 case 0:
                     var newGame = new NewGame();
-                    newGame.StartNewGame(buttons[0]);
+                    newGame.StartNewGame();
                     break;
                 case 1:
                     var resume = new Resume();
