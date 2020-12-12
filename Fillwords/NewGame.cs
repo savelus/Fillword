@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
@@ -11,12 +11,11 @@ namespace Fillwords
         {
             var consolePrinter = new ConsolePrinter();
             string NamePerson = consolePrinter.ConsolePrintNamePersonInNewGame();
-            string[] allWords = File.ReadAllLines("WordList.txt");
             int[] size = consolePrinter.InputSize();
             int width = size[1];
             int height = size[0];
             char[,] field = new char[height, width];
-            int[,] priorityCell = FillPriority(height, width); 
+            int[,] priorityCell = FillPriority(height, width);
         }
         private int[,] FillPriority(int height, int width)
         {
