@@ -12,12 +12,9 @@ namespace Fillwords
             Button[] buttonsMenu = new Button[] {new Button("New game"), new Button("Resume"),
                                              new Button("Stats"), new Button ("Add words"),
                                              new Button("Quit the Game") };
-            Console.SetWindowSize(120, 30);
             ConsolePrinter consolePrinter = new ConsolePrinter();
+            consolePrinter.ConfigureConsole();
             int buttonNumber = 0;
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.Clear();
             while (true)
             {
                 consolePrinter.ConsolePrintNameGame(35, 2); //Название игры
@@ -36,16 +33,13 @@ namespace Fillwords
             switch (buttonNumber)
             {
                 case 0:
-                    var newGame = new NewGame();
-                    newGame.StartNewGame();
+                    NewGame.StartNewGame();
                     break;
                 case 1:
-                    var resume = new Resume();
-                    resume.StartResume(buttons[1]);
+                    Resume.StartResume(buttons[1]);
                     break;
                 case 2:
-                    var stats = new Stats();
-                    stats.StartStats(buttons[2]);
+                    Stats.StartStats(buttons[2]);
                     break;
                 case 3:
                     var addWords = new AddWords();

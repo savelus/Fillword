@@ -8,7 +8,7 @@ namespace Fillwords
     {
         public void ConsolePrintNameGame (int cursorLeft, int cursorTop)
         {
-            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.SetCursorPosition(cursorLeft, cursorTop++);
             Console.WriteLine(" _____  _  _  _ __        __              _          ");
             Console.SetCursorPosition(cursorLeft, cursorTop++);
@@ -23,8 +23,8 @@ namespace Fillwords
         public void ConsolePrintButton(int cursorLeft, int cursorTop, int width, string inputname, bool changeColor)
         {
             Console.SetCursorPosition(cursorLeft, cursorTop++);
-            if (changeColor) Console.BackgroundColor = ConsoleColor.Cyan;
-            else Console.BackgroundColor = ConsoleColor.White;
+            if (changeColor) Console.ForegroundColor = ConsoleColor.Yellow;
+            else Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine($"┌{new string('─', width - 2)}┐");
             Console.SetCursorPosition(cursorLeft, cursorTop++);
             Console.WriteLine($"│{new string(' ', (18 - inputname.Length) / 2)}" +
@@ -102,5 +102,16 @@ namespace Fillwords
             while (checkSize == false);
             return size;
         }
+
+        public void ConfigureConsole()
+        {
+            Console.SetWindowSize(120, 30);
+            Console.CursorVisible = false;
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Clear();
+        }
     }
+
+    
 }

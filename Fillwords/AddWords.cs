@@ -9,6 +9,7 @@ namespace Fillwords
         ConsolePrinter consolePrinter = new ConsolePrinter();
         public void StartAddWords()
         {
+
             Button[] buttonsAdd = new Button[] { new Button("Show all words"), new Button("Add word"),
                                                  new Button ("Return in Menu") };
             Console.Clear();

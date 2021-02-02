@@ -7,7 +7,6 @@ namespace Fillwords
 
         static void Main(string[] args)
         {
-            Console.CursorVisible = false;
             Menu menu = new Menu();
             menu.CreateWindow();
         }

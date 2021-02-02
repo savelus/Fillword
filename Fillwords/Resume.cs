@@ -6,7 +6,7 @@ namespace Fillwords
 {
     public class Resume
     {
-        public void StartResume(Button button)
+        public static void StartResume(Button button)
         {
             var consolePrinter = new ConsolePrinter();
             consolePrinter.ConsolePrintDummy(button);
