@@ -33,7 +33,7 @@ namespace Fillwords
             switch (buttonNumber)
             {
                 case 0:
-                    NewGame.StartNewGame();
+                    NewGame.StartNewGame(buttons[0]);
                     break;
                 case 1:
                     Resume.StartResume(buttons[1]);
@@ -46,9 +46,7 @@ namespace Fillwords
                     addWords.StartAddWords();
                     break;
                 case 4:
-                    Console.BackgroundColor = ConsoleColor.White;
-                    Console.Clear();
-                    Environment.Exit(0);
+                    ConsolePrinter.EndGame();
                     break;
                 default:
                     break;

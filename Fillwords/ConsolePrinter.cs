@@ -54,7 +54,7 @@ namespace Fillwords
             }
         }
 
-        public void ConsolePrintDummy (Button button)
+        public static void ConsolePrintDummy (Button button)
         {
             Console.Clear();
             Console.SetCursorPosition(((120 - button.inputname.Length - 20) / 2), 10);
@@ -109,6 +109,18 @@ namespace Fillwords
             Console.CursorVisible = false;
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Clear();
+        }
+
+        public static void EndGame ()
+        {
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.Clear();
+            Environment.Exit(0);
+        }
+        
+        public static void Clear()
+        {
             Console.Clear();
         }
     }

@@ -12,7 +12,7 @@ namespace Fillwords
 
             Button[] buttonsAdd = new Button[] { new Button("Show all words"), new Button("Add word"),
                                                  new Button ("Return in Menu") };
-            Console.Clear();
+            ConsolePrinter.Clear();
             int buttonNumber = 0;
             while (true)
             {
@@ -45,13 +45,12 @@ namespace Fillwords
 
         public void ShowAllWords(Button button)
         {
-            consolePrinter.ConsolePrintDummy(button);
+            ConsolePrinter.ConsolePrintDummy(button);
         }
 
         public void AddWord(Button button)
         {
-            consolePrinter.ConsolePrintDummy(button);
-
+            ConsolePrinter.ConsolePrintDummy(button);
         }
 
     }

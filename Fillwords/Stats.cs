@@ -8,8 +8,8 @@ namespace Fillwords
     {
         public static void StartStats(Button button)
         {
-            var consolePrinter = new ConsolePrinter();
-            consolePrinter.ConsolePrintDummy(button);
+            ConsolePrinter.ConsolePrintDummy(button);
+
         }
 
     }
